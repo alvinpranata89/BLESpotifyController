@@ -6,9 +6,6 @@ const int buttonNext = 21;
 const int buttonPrev = 7;
 const int buttonVolUp = 3;
 const int buttonVolDown = 20;
-const int ledPin = 25;
-
-int ledState = LOW;
 
 // Debounce parameters
 unsigned long lastDebounceTime[5] = {0, 0, 0, 0, 0};
@@ -34,7 +31,7 @@ void setup() {
 
 void handleButton(int buttonPin, int index, const char* action, const uint8_t* key) {
     int reading = digitalRead(buttonPin);
-    // Serial.printf("Button %s state: %d\n", action, reading);
+    
     // Check for button state change and debounce
     if (reading != lastButtonState[index]) {
         lastDebounceTime[index] = millis();
@@ -44,11 +41,7 @@ void handleButton(int buttonPin, int index, const char* action, const uint8_t* k
     }
 
     if ((millis() - lastDebounceTime[index]) > debounceDelay) {
-      //  Serial.println("step3");
-      //  Serial.println("reading");
-      //  Serial.println(reading);
-      //  Serial.println("lastbuttonstate");
-      //  Serial.println(*lastButtonState);
+     
         if (reading == HIGH && lastButtonState[index] == HIGH) {
             Serial.printf("Sending %s media key...\n", action);
             bleKeyboard.write(key);
