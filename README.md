@@ -9,6 +9,5 @@ Im using the seeedstudio XIAO_ESP32C3 board, connected with 5 push buttons for:
 
 Tested on iOS
 
-(https://github.com/user-attachments/assets/6ae3dbd9-7c39-4f5d-afc4-d59b5376a18d)
-
 Running on 3.7V battery
+<img width="640" alt="image" src="https://github.com/user-attachments/assets/aac96c5f-5ce6-46c6-8ffc-5cb169384a93">
