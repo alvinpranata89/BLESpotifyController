@@ -35,9 +35,6 @@ void handleButton(int buttonPin, int index, const char* action, const uint8_t* k
     // Check for button state change and debounce
     if (reading != lastButtonState[index]) {
         lastDebounceTime[index] = millis();
-        //  Serial.println(*lastDebounceTime);
-        //  int a= millis() - lastDebounceTime[index];
-        //  Serial.printf("a: %d", a);
     }
 
     if ((millis() - lastDebounceTime[index]) > debounceDelay) {
